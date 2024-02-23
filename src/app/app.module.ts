@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TuiButtonModule, TuiModeModule, TuiRootModule, TuiThemeNightModule } from '@taiga-ui/core';
+import { TuiAlertModule, TuiAlertService, TuiButtonModule, TuiDialogModule, TuiModeModule, TuiRootModule, TuiThemeNightModule } from '@taiga-ui/core';
 import {TuiTabBarModule} from '@taiga-ui/addon-mobile';
 import { RegisterComponentComponent } from './register-component/register-component.component';
 import { CommonModule } from '@angular/common';
@@ -30,11 +30,11 @@ import { LoginComponentComponent } from './login-component/login-component.compo
     TuiRootModule,
     TuiTabBarModule,
     TuiThemeNightModule,
-    TuiModeModule,
-    CommonModule, ReactiveFormsModule, TuiInputModule,TuiIslandModule,TuiInputPhoneModule,
+    TuiModeModule,TuiDialogModule,
+    CommonModule, ReactiveFormsModule, TuiInputModule,TuiIslandModule,TuiInputPhoneModule,TuiAlertModule,
     TuiInputPasswordModule, TuiButtonModule, TuiCheckboxLabeledModule,RouterModule, TuiSurfaceModule, HttpClientModule
   ],
-  providers: [AuthenticationClient,AuthenticationService,AuthGuard],
+  providers: [AuthenticationClient,AuthenticationService,AuthGuard,TuiAlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

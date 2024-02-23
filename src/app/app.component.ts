@@ -1,7 +1,9 @@
 import {ChangeDetectionStrategy, Component, Inject} from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
-import {TuiAlertService} from '@taiga-ui/core';
+import {TuiAlertService, TuiDialogService} from '@taiga-ui/core';
 
+import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
+import { LoginComponentComponent } from './login-component/login-component.component';
 
 
 interface Item {
@@ -48,7 +50,7 @@ export class AppComponent {
       },
   ];
 
-  constructor(@Inject(TuiAlertService) private readonly alerts: TuiAlertService,private router: Router) {
+  constructor(@Inject(TuiDialogService) private readonly dialogs: TuiDialogService,private router: Router) {
     router.events.forEach((event) => {
         if (event instanceof NavigationStart) {
           if (event['url'] == '/login' || event['url'] == '/register') {
@@ -63,7 +65,11 @@ export class AppComponent {
  
 
   onClick(item: Item): void {
-      item.badge = 0;
-      this.alerts.open(this.activeItemIndex, {label: item.text}).subscribe();
+    this.dialogs
+            .open(
+                '<div>This is a plain string dialog.</div>It supports basic <strong>HTML</strong>',
+                {label: 'Heading', size: 's'},
+            )
+            .subscribe();
   }
 }
