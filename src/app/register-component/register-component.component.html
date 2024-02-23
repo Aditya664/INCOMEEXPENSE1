@@ -29,7 +29,7 @@
 
             <div class="tui-form__row">
               <p>
-                <tui-input formControlName="mobileNo"> Mobile No</tui-input>
+                <tui-input-phone countryCode="+91" formControlName="mobileNo"> Mobile No</tui-input-phone>
               </p>
             </div>
 
@@ -44,8 +44,8 @@
 
           <div class="tui-island_text-align_right">
             <a
-              tuiButton
-              type="button"
+              tuiButton 
+              type="button" [disabled]="!this.form.valid" 
               class="tui-form__buttons_align_end"
               appearance="accent"
               size="m"

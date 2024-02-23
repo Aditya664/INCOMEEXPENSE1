@@ -16,7 +16,7 @@ export class AuthenticationService {
 
   public login(username: string, password: string): void {
     this.authenticationClient.login(username, password).subscribe((token) => {
-      localStorage.setItem(this.tokenKey, token);
+      localStorage.setItem(this.tokenKey, JSON.stringify(token));
       this.router.navigate(['/']);
     });
   }
@@ -25,7 +25,7 @@ export class AuthenticationService {
     this.authenticationClient
       .register(user)
       .subscribe((token) => {
-        localStorage.setItem(this.tokenKey, token);
+        localStorage.setItem(this.tokenKey, JSON.stringify(token));
         this.router.navigate(['/']);
       });
   }

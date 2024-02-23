@@ -8,18 +8,20 @@ import {TuiTabBarModule} from '@taiga-ui/addon-mobile';
 import { RegisterComponentComponent } from './register-component/register-component.component';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TuiCheckboxLabeledModule, TuiInputModule, TuiInputPasswordModule, TuiIslandModule } from '@taiga-ui/kit';
+import { TuiCheckboxLabeledModule, TuiInputModule, TuiInputPasswordModule, TuiInputPhoneModule, TuiIslandModule } from '@taiga-ui/kit';
 import { RouterModule } from '@angular/router';
 import {TuiSurfaceModule} from '@taiga-ui/experimental';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthenticationClient } from './Services/authentication.client';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { AuthGuard } from './helpers/auth.guard';
+import { LoginComponentComponent } from './login-component/login-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponentComponent
+    RegisterComponentComponent,
+    LoginComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,7 @@ import { AuthGuard } from './helpers/auth.guard';
     TuiTabBarModule,
     TuiThemeNightModule,
     TuiModeModule,
-    CommonModule, ReactiveFormsModule, TuiInputModule,TuiIslandModule,
+    CommonModule, ReactiveFormsModule, TuiInputModule,TuiIslandModule,TuiInputPhoneModule,
     TuiInputPasswordModule, TuiButtonModule, TuiCheckboxLabeledModule,RouterModule, TuiSurfaceModule, HttpClientModule
   ],
   providers: [AuthenticationClient,AuthenticationService,AuthGuard],
