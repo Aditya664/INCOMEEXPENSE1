@@ -1,5 +1,6 @@
 
 <tui-theme-night></tui-theme-night>
+<router-outlet></router-outlet>
 <div class="footer">
   <nav
     tuiTabBar
@@ -12,9 +13,9 @@
         [badge]="item.badge"
         [icon]="item.icon"
         (click)="onClick(item)"
+        class="footer-menuitem"
     >
         {{ item.text }}
     </button>
 </nav>
 </div>
-<router-outlet></router-outlet>

@@ -1,0 +1,62 @@
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+    <form [formGroup]="form" class="col-md-4">
+      <div>
+        <tui-island>
+          <h3 class="tui-island__title">Register</h3>
+          <p class="tui-island__paragraph">
+            Do you already have an account ?
+            <a tuiLink [routerLink]="['/login']"> Login </a>
+          </p>
+          <div class="tui-island__paragraph tui-island__paragraph_link">
+            <div class="tui-form__row">
+              <p>
+                <tui-input formControlName="email"> Type an email </tui-input>
+              </p>
+            </div>
+
+            <div class="tui-form__row">
+              <p>
+                <tui-input formControlName="firstName"> First Name </tui-input>
+              </p>
+            </div>
+
+            <div class="tui-form__row">
+              <p>
+                <tui-input formControlName="lastName"> Last Name </tui-input>
+              </p>
+            </div>
+
+            <div class="tui-form__row">
+              <p>
+                <tui-input formControlName="mobileNo"> Mobile No</tui-input>
+              </p>
+            </div>
+
+            <div class="tui-form__row">
+              <p>
+                <tui-input-password formControlName="password">
+                  Type a password
+                </tui-input-password>
+              </p>
+            </div>
+          </div>
+
+          <div class="tui-island_text-align_right">
+            <a
+              tuiButton
+              type="button"
+              class="tui-form__buttons_align_end"
+              appearance="accent"
+              size="m"
+              (click)="onRegister()"
+            >
+              Register
+            </a>
+          </div>
+        </tui-island>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-4 col-lg-4 col-sm-12 m-2"></div>
+</div>

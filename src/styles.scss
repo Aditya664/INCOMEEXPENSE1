@@ -4,6 +4,12 @@
     width: 100%;
 }
 
+.footer .footer-menuitem{
+    font-family: var(    --tui-heading-font);
+    font-size: 14px;
+}
+
 html,body{
-    background-color: #f1f2f4;
+    margin: 0;
+    background-color: var(--tui-base-02);
 }

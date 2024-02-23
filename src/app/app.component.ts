@@ -21,27 +21,29 @@ export class AppComponent {
  
   readonly items = [
       {
-          text: 'Favorites',
-          icon: 'tuiIconHeartLarge',
+          text: 'Records',
+          icon: 'tuiIconList',
           badge: 3,
       },
       {
-          text: 'Calls',
-          icon: 'tuiIconPhoneLarge',
+          text: 'Analysis',
+          icon: 'tuiIconPieChart',
           badge: 1234,
       },
       {
-          text: 'Profile',
-          icon: 'tuiIconUserLarge',
+          text: 'Budgets',
+          icon: 'tuiIconCalendar',
+          badge: 1234,
       },
       {
-          text: 'Settings and configuration',
-          icon: 'tuiIconSettingsLarge',
+          text: 'Accounts',
+          icon: 'tuiIconTrello',
           badge: 100,
       },
       {
-          text: 'More',
-          icon: 'tuiIconMoreHorizontalLarge',
+          text: 'Categories',
+          icon: 'tuiIconServer',
+          badge: 100,
       },
   ];
 
