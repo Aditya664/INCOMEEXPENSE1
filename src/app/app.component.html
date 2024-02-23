@@ -1,7 +1,7 @@
 
 <tui-theme-night></tui-theme-night>
 <router-outlet></router-outlet>
-<div class="footer">
+<div *ngIf="isLoggedIn" class="footer">
   <nav
     tuiTabBar
     class="tabs"
