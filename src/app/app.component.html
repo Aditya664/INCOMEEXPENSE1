@@ -1,24 +1,19 @@
-
-<tui-theme-night></tui-theme-night>
-<router-outlet></router-outlet>
-<div *ngIf="isLoggedIn" class="footer">
-  <nav
-    tuiTabBar
-    class="tabs"
-    [(activeItemIndex)]="activeItemIndex"
->
-    <button
+<tui-theme-night>
+  <router-outlet></router-outlet>
+  <div *ngIf="isLoggedIn" class="footer">
+    <nav tuiTabBar class="tabs" [(activeItemIndex)]="activeItemIndex">
+      <button
         *ngFor="let item of items"
         tuiTabBarItem
         [badge]="item.badge"
         [icon]="item.icon"
         (click)="onClick(item)"
         class="footer-menuitem"
-    >
+      >
         {{ item.text }}
-    </button>
-</nav>
-</div>
+      </button>
+    </nav>
+  </div>
 
   <div class="loader-overlay" *ngIf="loaderService.isLoading | async">
     <div class="loader-content">
@@ -26,3 +21,4 @@
       <tui-loader></tui-loader>
     </div>
   </div>
+</tui-theme-night>
