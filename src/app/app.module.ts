@@ -16,12 +16,12 @@ import { AuthenticationClient } from './Services/authentication.client';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { AuthGuard } from './helpers/auth.guard';
 import { LoginComponentComponent } from './login-component/login-component.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TuiLoaderModule } from '@taiga-ui/core';
 import { AccountComponent } from './account/account.component';
 import { CategoryComponent } from './category/category.component';
 import { BudgetComponent } from './budget/budget.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 
 @NgModule({
   declarations: [

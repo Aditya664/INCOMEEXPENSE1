@@ -8,7 +8,7 @@ interface Item {
   badge?: number;
   icon: string;
   text: string;
-  route:string;
+  route: string;
 }
 
 @Component({
@@ -20,53 +20,53 @@ interface Item {
 export class AppComponent {
   title = 'IncomeExpense';
   activeItemIndex = 1;
-    isLoggedIn:boolean;
+  isLoggedIn: boolean;
   readonly items = [
-      {
-          text: 'Records',
-          icon: 'tuiIconList',
-          badge: 3,
-          route:'/records'
-      },
-      {
-          text: 'Analysis',
-          icon: 'tuiIconPieChart',
-          badge: 1234,
-          route:'/analysis'
-      },
-      {
-          text: 'Budgets',
-          icon: 'tuiIconCalendar',
-          badge: 1234,
-          route:'/budget'
-      },
-      {
-          text: 'Accounts',
-          icon: 'tuiIconTrello',
-          badge: 100,
-          route:'/account'
-      },
-      {
-          text: 'Categories',
-          icon: 'tuiIconServer',
-          badge: 100,
-          route:'/category'
-      },
+    {
+      text: 'Records',
+      icon: 'tuiIconList',
+      badge: 3,
+      route: '/records'
+    },
+    {
+      text: 'Analysis',
+      icon: 'tuiIconPieChart',
+      badge: 1234,
+      route: '/analysis'
+    },
+    {
+      text: 'Budgets',
+      icon: 'tuiIconCalendar',
+      badge: 1234,
+      route: '/budget'
+    },
+    {
+      text: 'Accounts',
+      icon: 'tuiIconTrello',
+      badge: 100,
+      route: '/account'
+    },
+    {
+      text: 'Categories',
+      icon: 'tuiIconServer',
+      badge: 100,
+      route: '/category'
+    },
   ];
 
-  constructor(public loaderService: LoaderService,private router: Router) {
+  constructor(public loaderService: LoaderService, private router: Router) {
     router.events.forEach((event) => {
-        if (event instanceof NavigationStart) {
-          if (event['url'] == '/login' || event['url'] == '/register') {
-            this.isLoggedIn = false;
-          } else {
-            // console.log("NU")
-            this.isLoggedIn = true;
-          }
+      if (event instanceof NavigationStart) {
+        if (event['url'] == '/login' || event['url'] == '/register') {
+          this.isLoggedIn = false;
+        } else {
+          // console.log("NU")
+          this.isLoggedIn = true;
         }
-      });
+      }
+    });
   }
- 
+
 
   onClick(item: Item): void {
     this.router.navigateByUrl(item.route);
