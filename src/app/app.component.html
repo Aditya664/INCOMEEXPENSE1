@@ -1,4 +1,6 @@
-<router-outlet></router-outlet>
+<div class="m-4" style="padding-bottom: 80px; padding-top: 80px;">
+  <router-outlet></router-outlet>
+</div>
 <div *ngIf="isLoggedIn" class="footer">
   <nav tuiTabBar class="tabs" [(activeItemIndex)]="activeItemIndex">
     <button
