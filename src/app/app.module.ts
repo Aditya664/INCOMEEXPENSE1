@@ -21,7 +21,8 @@ import { TuiLoaderModule } from '@taiga-ui/core';
 import { AccountComponent } from './account/account.component';
 import { CategoryComponent } from './category/category.component';
 import { BudgetComponent } from './budget/budget.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { XhrErrorHandlerService } from './Services/xhr-error-handler.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     CommonModule, ReactiveFormsModule, TuiInputModule,TuiIslandModule,TuiInputPhoneModule,TuiAlertModule,
     TuiInputPasswordModule, TuiButtonModule, TuiCheckboxLabeledModule,RouterModule, TuiSurfaceModule, HttpClientModule
   ],
-  providers: [AuthenticationClient,AuthenticationService,AuthGuard,TuiAlertService],
+  providers: [AuthenticationClient,AuthenticationService,AuthGuard,XhrErrorHandlerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
