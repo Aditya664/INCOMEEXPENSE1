@@ -4,6 +4,9 @@ import { RegisterComponentComponent } from './register-component/register-compon
 import { AppComponent } from './app.component';
 import { AuthGuard } from './helpers/auth.guard';
 import { LoginComponentComponent } from './login-component/login-component.component';
+import { AccountComponent } from './account/account.component';
+import { CategoryComponent } from './category/category.component';
+import { BudgetComponent } from './budget/budget.component';
 
 const routes: Routes = [
   {
@@ -18,6 +21,21 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponentComponent,
+  },
+  {
+    path: 'account',
+    component: AccountComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'category',
+    component: CategoryComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'budget',
+    component: BudgetComponent,
+    canActivate: [AuthGuard],
   },
 ];
 

@@ -11,6 +11,7 @@ interface Item {
   badge?: number;
   icon: string;
   text: string;
+  route:string;
 }
 
 @Component({
@@ -28,26 +29,31 @@ export class AppComponent {
           text: 'Records',
           icon: 'tuiIconList',
           badge: 3,
+          route:'/records'
       },
       {
           text: 'Analysis',
           icon: 'tuiIconPieChart',
           badge: 1234,
+          route:'/analysis'
       },
       {
           text: 'Budgets',
           icon: 'tuiIconCalendar',
           badge: 1234,
+          route:'/budget'
       },
       {
           text: 'Accounts',
           icon: 'tuiIconTrello',
           badge: 100,
+          route:'/account'
       },
       {
           text: 'Categories',
           icon: 'tuiIconServer',
           badge: 100,
+          route:'/category'
       },
   ];
 
@@ -66,6 +72,6 @@ export class AppComponent {
  
 
   onClick(item: Item): void {
- 
+    this.router.navigateByUrl(item.route);
   }
 }

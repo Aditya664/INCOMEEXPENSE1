@@ -19,12 +19,18 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {TuiLoaderModule} from '@taiga-ui/core';
+import { AccountComponent } from './account/account.component';
+import { CategoryComponent } from './category/category.component';
+import { BudgetComponent } from './budget/budget.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponentComponent,
-    LoginComponentComponent
+    LoginComponentComponent,
+    AccountComponent,
+    CategoryComponent,
+    BudgetComponent
   ],
   imports: [
     BrowserAnimationsModule, 
