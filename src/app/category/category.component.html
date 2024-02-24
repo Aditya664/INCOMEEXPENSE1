@@ -1,10 +1,9 @@
 <div class="container-fluid">
   <div
     *ngFor="let category of categories"
-    class="row justify-content-center align-items-center"
-    style="height: 100vh"
+    class="row justify-content-center align-items-center m-4"
   >
-    <button tuiSurface="elevated" class="button">
+    <button style="min-width: 50%;" tuiSurface="elevated" class="button">
       <div class="justify-content-center align-items-center">
         <span [ngClass]="{ 'expense': category.type === 'expense', 'income': category.type === 'income' }">{{ category.type }}</span>
         <span>
