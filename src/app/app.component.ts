@@ -4,6 +4,7 @@ import { NavigationStart, Router } from '@angular/router';
 import { LoaderService } from './Services/loader.service';
 import { TuiNightThemeService } from '@taiga-ui/core';
 import { Observable } from 'rxjs';
+import { AuthenticationService } from './Services/authentication.service';
 
 
 interface Item {
@@ -21,7 +22,7 @@ interface Item {
 
 export class AppComponent {
   title = 'IncomeExpense';
-  activeItemIndex = 1;
+  activeItemIndex = 4;
   currentTab = 'Records'
   isLoggedIn: boolean;
   readonly items = [
@@ -52,7 +53,11 @@ export class AppComponent {
     },
   ];
 
-  constructor(public loaderService: LoaderService, private router: Router,
+  logout():void{
+    this.authService.logout()
+  }
+
+  constructor(public loaderService: LoaderService, private router: Router,private authService:AuthenticationService,
     @Inject(TuiNightThemeService) readonly night$: Observable<boolean>
     ) {
     router.events.forEach((event) => {

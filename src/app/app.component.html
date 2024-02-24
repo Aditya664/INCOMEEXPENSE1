@@ -1,13 +1,13 @@
 <div class="header">
   <tui-app-bar>
-    <button tuiAppBarBack tuiSlot="left"></button>
     {{currentTab}}
     <button
     appearance="destructive" [icon]="'tuiIconUser'" size="m" 
       title="Settings"
       tuiIconButton
       tuiSlot="right"
-    ></button>
+      (click)="logout()"
+    >Logout</button>
   </tui-app-bar>
 </div>
 <div class="m-4" style="padding-bottom: 80px; padding-top: 80px">
