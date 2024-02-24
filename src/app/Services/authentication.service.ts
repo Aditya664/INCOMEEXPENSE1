@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationClient } from 'src/app/Services/authentication.client';
 import { User } from '../Model/User';

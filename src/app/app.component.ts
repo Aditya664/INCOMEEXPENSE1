@@ -1,9 +1,6 @@
-import {ChangeDetectionStrategy, Component, Inject} from '@angular/core';
+import { Component } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
-import {TuiAlertService, TuiDialogService} from '@taiga-ui/core';
 
-import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
-import { LoginComponentComponent } from './login-component/login-component.component';
 import { LoaderService } from './Services/loader.service';
 
 
