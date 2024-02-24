@@ -23,6 +23,8 @@ import { CategoryComponent } from './category/category.component';
 import { BudgetComponent } from './budget/budget.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { XhrErrorHandlerService } from './Services/xhr-error-handler.service';
+import {TuiAvatarModule} from '@taiga-ui/kit';
+import {TuiIconModule} from '@taiga-ui/experimental';
 
 @NgModule({
   declarations: [
@@ -38,8 +40,10 @@ import { XhrErrorHandlerService } from './Services/xhr-error-handler.service';
     BrowserModule,
     AppRoutingModule,
     TuiLoaderModule,
+    TuiAvatarModule,
     TuiThemeNightModule,
     TuiRootModule,
+    TuiIconModule,
     TuiTabBarModule,
     MatSnackBarModule,
     NoopAnimationsModule,
