@@ -1,7 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationClient } from 'src/app/Services/authentication.client';
 import { User } from '../Model/User';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginComponentComponent } from '../login-component/login-component.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { XhrErrorHandlerService } from './xhr-error-handler.service';
+import { LoaderService } from './loader.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,22 +16,38 @@ export class AuthenticationService {
 
   constructor(
     private authenticationClient: AuthenticationClient,
-    private router: Router
-  ) {}
+    private router: Router,
+    private xhrErrorService: XhrErrorHandlerService,
+    private loaderService: LoaderService
+  ) { }
 
   public login(username: string, password: string): void {
-    this.authenticationClient.login(username, password).subscribe((token) => {
-      localStorage.setItem(this.tokenKey, JSON.stringify(token));
-      this.router.navigate(['/']);
+    this.loaderService.show();
+    this.authenticationClient.login(username, password).subscribe({
+      next: (token) => {
+        localStorage.setItem(this.tokenKey, JSON.stringify(token));
+        this.loaderService.hide();
+        this.router.navigate(['/']);
+      }, error: (error: Error) => {
+        this.xhrErrorService.handleError(error);
+        this.loaderService.hide();
+      }
     });
   }
 
-  public register(user:User): void {
+  public register(user: User): void {
+    this.loaderService.show();
     this.authenticationClient
       .register(user)
-      .subscribe((token) => {
-        localStorage.setItem(this.tokenKey, JSON.stringify(token));
-        this.router.navigate(['/']);
+      .subscribe({
+        next: (token) => {
+          localStorage.setItem(this.tokenKey, JSON.stringify(token));
+          this.loaderService.hide();
+          this.router.navigate(['/']);
+        }, error: (error: Error) => {
+          this.xhrErrorService.handleError(error);
+          this.loaderService.hide();
+        }
       });
   }
 

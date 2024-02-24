@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../Services/authentication.service';
+import { TuiAlertService } from '@taiga-ui/core/components/alert';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { LoaderService } from '../Services/loader.service';
 
 @Component({
   selector: 'app-login-component',
@@ -9,8 +12,10 @@ import { AuthenticationService } from '../Services/authentication.service';
 })
 export class LoginComponentComponent {
   form: FormGroup;
+  isLoading = false;
 
-  constructor(private authService: AuthenticationService,private fb:FormBuilder) { }
+  constructor(private snackBar: MatSnackBar,private loaderService:LoaderService,
+    private authService: AuthenticationService, private fb: FormBuilder, @Inject(TuiAlertService) private readonly alerts: TuiAlertService) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -20,10 +25,15 @@ export class LoginComponentComponent {
   }
 
   onLogin(): void {
-    if(this.form.valid){
-      this.authService.login(this.form.get('email').value,this.form.get('password').value);
-    }else{
+    if (this.form.valid) {
+      this.authService.login(this.form.get('email').value, this.form.get('password').value);
+    } else {
       this.form.markAsDirty()
     }
+  }
+
+
+  showNotification(): void {
+    this.snackBar.open('err.error', "Error")
   }
 }

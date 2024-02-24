@@ -4,6 +4,7 @@ import {TuiAlertService, TuiDialogService} from '@taiga-ui/core';
 
 import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
 import { LoginComponentComponent } from './login-component/login-component.component';
+import { LoaderService } from './Services/loader.service';
 
 
 interface Item {
@@ -50,7 +51,7 @@ export class AppComponent {
       },
   ];
 
-  constructor(@Inject(TuiDialogService) private readonly dialogs: TuiDialogService,private router: Router) {
+  constructor(public loaderService: LoaderService,private router: Router) {
     router.events.forEach((event) => {
         if (event instanceof NavigationStart) {
           if (event['url'] == '/login' || event['url'] == '/register') {
@@ -65,11 +66,6 @@ export class AppComponent {
  
 
   onClick(item: Item): void {
-    this.dialogs
-            .open(
-                '<div>This is a plain string dialog.</div>It supports basic <strong>HTML</strong>',
-                {label: 'Heading', size: 's'},
-            )
-            .subscribe();
+ 
   }
 }

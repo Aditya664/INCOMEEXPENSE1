@@ -16,6 +16,9 @@ import { AuthenticationClient } from './Services/authentication.client';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { AuthGuard } from './helpers/auth.guard';
 import { LoginComponentComponent } from './login-component/login-component.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {TuiLoaderModule} from '@taiga-ui/core';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,14 @@ import { LoginComponentComponent } from './login-component/login-component.compo
     LoginComponentComponent
   ],
   imports: [
+    BrowserAnimationsModule, 
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, 
+    TuiLoaderModule,
     TuiRootModule,
     TuiTabBarModule,
+    MatSnackBarModule,
+    NoopAnimationsModule,
     TuiThemeNightModule,
     TuiModeModule,TuiDialogModule,
     CommonModule, ReactiveFormsModule, TuiInputModule,TuiIslandModule,TuiInputPhoneModule,TuiAlertModule,
