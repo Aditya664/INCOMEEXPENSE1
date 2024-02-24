@@ -26,4 +26,7 @@ export class CategoryComponent implements OnInit {
     })
   }
 
+  onDeleteCategory(category?:Category):void{
+    
+  } 
 }
