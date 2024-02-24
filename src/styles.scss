@@ -4,6 +4,12 @@
     width: 100%;
 }
 
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
 .footer .footer-menuitem{
     font-family: var(--tui-heading-font);
     font-size: 14px;

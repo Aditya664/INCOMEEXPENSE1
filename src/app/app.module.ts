@@ -25,6 +25,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { XhrErrorHandlerService } from './Services/xhr-error-handler.service';
 import {TuiAvatarModule} from '@taiga-ui/kit';
 import {TuiIconModule} from '@taiga-ui/experimental';
+import {TuiAppBarModule} from '@taiga-ui/experimental';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import {TuiIconModule} from '@taiga-ui/experimental';
     TuiThemeNightModule,
     TuiRootModule,
     TuiIconModule,
+    TuiAppBarModule,
     TuiTabBarModule,
     MatSnackBarModule,
     NoopAnimationsModule,

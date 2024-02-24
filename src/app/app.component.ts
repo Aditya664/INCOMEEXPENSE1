@@ -22,6 +22,7 @@ interface Item {
 export class AppComponent {
   title = 'IncomeExpense';
   activeItemIndex = 1;
+  currentTab = 'Records'
   isLoggedIn: boolean;
   readonly items = [
     {
@@ -68,6 +69,7 @@ export class AppComponent {
 
 
   onClick(item: Item): void {
+    this.currentTab = item.text;
     this.router.navigateByUrl(item.route);
   }
 }
