@@ -2,9 +2,6 @@ import { Injectable, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationClient } from 'src/app/Services/authentication.client';
 import { User } from '../Model/User';
-import { MatDialog } from '@angular/material/dialog';
-import { LoginComponentComponent } from '../login-component/login-component.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { XhrErrorHandlerService } from './xhr-error-handler.service';
 import { LoaderService } from './loader.service';
 
