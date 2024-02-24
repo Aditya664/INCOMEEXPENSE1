@@ -15,4 +15,8 @@ export class IncomeExpenseService {
   public getAllCategories(): Observable<Category[]> {
     return this.http.get<Category[]>(this.baseApiUrl + `Category/GetAllCategory/${this.userId}`);
   }
+
+  public deleteCategory(categoryId:string): Observable<Category> {
+    return this.http.delete<Category>(this.baseApiUrl + `Category/DeleteCategory/${this.userId}/${categoryId}`);
+  }
 }

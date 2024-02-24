@@ -45,4 +45,12 @@ export class XhrErrorHandlerService implements ErrorHandler {
       console.error(error);
     }
   }
+
+  public handleSuccess(message:string):void{
+    this.snackBar.open(message, 'OK', {
+      verticalPosition: 'bottom',
+      horizontalPosition: 'center',
+      duration: 3000,
+    });
+  }
 }

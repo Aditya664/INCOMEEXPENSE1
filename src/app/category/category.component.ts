@@ -14,6 +14,10 @@ export class CategoryComponent implements OnInit {
   accountImg = 'src/assets/account.svg'
   constructor(private loaderService: LoaderService, private incomeExpenseService: IncomeExpenseService, private errorService: XhrErrorHandlerService) { }
   ngOnInit(): void {
+    this.getAllCategory()
+  }
+
+  private getAllCategory():void{
     this.loaderService.show()
     this.incomeExpenseService.getAllCategories().subscribe({
       next: (categories) => {
@@ -25,8 +29,17 @@ export class CategoryComponent implements OnInit {
       }
     })
   }
-
   onDeleteCategory(category?:Category):void{
-    
+    this.loaderService.show()
+      this.incomeExpenseService.deleteCategory(category.id).subscribe({
+        next:(result) =>{
+          this.getAllCategory()
+          this.errorService.handleSuccess('Category Deleted!!')
+          this.loaderService.hide()
+        },error:(error) =>{
+          this.errorService.handleError(error)
+          this.loaderService.hide()
+        }
+      })
   } 
 }
