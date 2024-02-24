@@ -2,7 +2,14 @@
     <div class="row h-100 justify-content-center align-items-center">
       <form [formGroup]="form" class="col-md-4">
         <div>
-          <tui-island>
+          <tui-island class="row h-100 justify-content-center align-items-center" [hoverable]="true">
+            <img
+            alt="Taiga"
+            class="image"
+            [src]="
+              'https://sales.webtel.in/images/Login-page-character1.png'
+            "
+          />
             <h3 class="tui-island__title">Login</h3>
             <p class="tui-island__paragraph">
               Don't have an account ?

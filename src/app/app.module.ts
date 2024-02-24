@@ -38,11 +38,11 @@ import { XhrErrorHandlerService } from './Services/xhr-error-handler.service';
     BrowserModule,
     AppRoutingModule,
     TuiLoaderModule,
+    TuiThemeNightModule,
     TuiRootModule,
     TuiTabBarModule,
     MatSnackBarModule,
     NoopAnimationsModule,
-    TuiThemeNightModule,
     TuiModeModule,TuiDialogModule,
     CommonModule, ReactiveFormsModule, TuiInputModule,TuiIslandModule,TuiInputPhoneModule,TuiAlertModule,
     TuiInputPasswordModule, TuiButtonModule, TuiCheckboxLabeledModule,RouterModule, TuiSurfaceModule, HttpClientModule

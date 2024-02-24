@@ -1,24 +1,22 @@
-<tui-theme-night>
-  <router-outlet></router-outlet>
-  <div *ngIf="isLoggedIn" class="footer">
-    <nav tuiTabBar class="tabs" [(activeItemIndex)]="activeItemIndex">
-      <button
-        *ngFor="let item of items"
-        tuiTabBarItem
-        [badge]="item.badge"
-        [icon]="item.icon"
-        (click)="onClick(item)"
-        class="footer-menuitem"
-      >
-        {{ item.text }}
-      </button>
-    </nav>
-  </div>
+<router-outlet></router-outlet>
+<div *ngIf="isLoggedIn" class="footer">
+  <nav tuiTabBar class="tabs" [(activeItemIndex)]="activeItemIndex">
+    <button
+      *ngFor="let item of items"
+      tuiTabBarItem
+      [badge]="item.badge"
+      [icon]="item.icon"
+      (click)="onClick(item)"
+      class="footer-menuitem"
+    >
+      {{ item.text }}
+    </button>
+  </nav>
+</div>
 
-  <div class="loader-overlay" *ngIf="loaderService.isLoading | async">
-    <div class="loader-content">
-      <!-- Your loader content (e.g., spinner) goes here -->
-      <tui-loader></tui-loader>
-    </div>
+<div class="loader-overlay" *ngIf="loaderService.isLoading | async">
+  <div class="loader-content">
+    <!-- Your loader content (e.g., spinner) goes here -->
+    <tui-loader></tui-loader>
   </div>
-</tui-theme-night>
+</div>

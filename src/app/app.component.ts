@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 
 import { LoaderService } from './Services/loader.service';
+import { TuiNightThemeService } from '@taiga-ui/core';
+import { Observable } from 'rxjs';
 
 
 interface Item {
@@ -54,7 +56,9 @@ export class AppComponent {
     },
   ];
 
-  constructor(public loaderService: LoaderService, private router: Router) {
+  constructor(public loaderService: LoaderService, private router: Router,
+    @Inject(TuiNightThemeService) readonly night$: Observable<boolean>
+    ) {
     router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         if (event['url'] == '/login' || event['url'] == '/register') {

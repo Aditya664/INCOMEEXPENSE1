@@ -5,14 +5,13 @@
 }
 
 .footer .footer-menuitem{
-    font-family: var(    --tui-heading-font);
+    font-family: var(--tui-heading-font);
     font-size: 14px;
 }
 
 html,body{
     margin: 0;
-    background-color: var(--tui-base-02);
-    color: white;
+    height: 100%;
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
